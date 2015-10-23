@@ -36,11 +36,22 @@ public class Scoreboard {
         return out;
     }
 
-    /*
-    public GameEntry remove(int i){
 
+    public GameEntry remove(int i){
+        if(i < 0 || i > numEntries - 1){
+            throw new ArrayIndexOutOfBoundsException("Invalid index to remove : " + i + " | numEntries = " + numEntries);
+        }
+
+        GameEntry out = board[i];
+        numEntries--;
+        while(i < numEntries){
+            board[i] = board[i + 1];
+            i++;
+        }
+        board[numEntries] = null;
+        return out;
     }
-    */
+
 
     public GameEntry[] getScoreBoard(){
         return this.board;
