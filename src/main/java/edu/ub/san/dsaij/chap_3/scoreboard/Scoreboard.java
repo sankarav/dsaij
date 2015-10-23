@@ -17,10 +17,7 @@ public class Scoreboard {
 
     public int add(GameEntry entry){
         int out = -1;
-        if(numEntries == 0){
-            board[numEntries] = entry;
-            out = numEntries++;
-        } else if (numEntries < board.length || entry.getScore() > board[numEntries - 1].getScore())
+        if (numEntries < board.length || entry.getScore() > board[numEntries - 1].getScore())
         {
             if(numEntries < board.length){
                 numEntries++;
